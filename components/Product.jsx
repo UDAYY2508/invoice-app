@@ -91,8 +91,8 @@ const Product = forwardRef((props, ref) => {
 
   return (
     <div className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">Product Details</h2>
-      <div className="hidden md:grid md:grid-cols-9 gap-2 mb-1 font-semibold text-gray-700 text-xs">
+      <h2 className="text-lg font-medium mb-2 text-gray-800">Product Details</h2>
+      <div className="hidden md:grid md:grid-cols-9 gap-2 mb-1 font-medium text-gray-600 text-xs">
         <div>Product Name</div>
         <div>Available Qty</div>
         <div>Price</div>
@@ -105,70 +105,70 @@ const Product = forwardRef((props, ref) => {
       {products.map((product, idx) => (
         <div key={idx} className="grid grid-cols-1 md:grid-cols-9 gap-2 mb-2 items-end">
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">Product Name</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">Product Name</label>
             <input
               type="text"
-              className="border rounded px-2 py-1 text-sm w-full"
-              placeholder="Product Name"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
+              placeholder="Name"
               value={product.name}
               onChange={e => handleProductChange(idx, 'name', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">Available Qty</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">Available Qty</label>
             <input
               type="number"
-              className="border rounded px-2 py-1 text-sm w-full"
-              placeholder="Available Qty"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
+              placeholder="Qty"
               value={product.availableQty}
               onChange={e => handleProductChange(idx, 'availableQty', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">Price</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">Price</label>
             <input
               type="number"
-              className="border rounded px-2 py-1 text-sm w-full"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
               placeholder="Price"
               value={product.price}
               onChange={e => handleProductChange(idx, 'price', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">Buy Qty</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">Buy Qty</label>
             <input
               type="number"
-              className="border rounded px-2 py-1 text-sm w-full"
-              placeholder="Buy Qty"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
+              placeholder="Buy"
               value={product.buyQty}
               onChange={e => handleProductChange(idx, 'buyQty', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">GST %</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">GST %</label>
             <input
               type="number"
-              className="border rounded px-2 py-1 text-sm w-full"
-              placeholder="GST %"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
+              placeholder="GST"
               value={product.gst}
               onChange={e => handleProductChange(idx, 'gst', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1">Discount %</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1">Discount %</label>
             <input
               type="number"
-              className="border rounded px-2 py-1 text-sm w-full"
-              placeholder="Discount %"
+              className="border border-gray-200 rounded px-2 py-1 text-sm w-full"
+              placeholder="Discount"
               value={product.discount}
               onChange={e => handleProductChange(idx, 'discount', e.target.value)}
             />
           </div>
           <div>
-            <label className="md:hidden block text-xs font-semibold text-gray-700 mb-1" data-html2pdf-ignore>Total</label>
+            <label className="md:hidden block text-xs font-medium text-gray-600 mb-1" data-html2pdf-ignore>Total</label>
             <input
               type="text"
-              className="border rounded px-2 py-1 text-sm bg-gray-100 w-full"
+              className="border border-gray-100 rounded px-2 py-1 text-sm bg-gray-50 w-full"
               placeholder="Total"
               value={product.total}
               readOnly
@@ -176,7 +176,7 @@ const Product = forwardRef((props, ref) => {
           </div>
           <div className="flex md:justify-center">
             <button
-              className="bg-red-500 text-white px-2 py-1.5 rounded text-xs"
+              className="border border-gray-300 text-gray-600 px-2 py-1.5 rounded text-xs"
               onClick={() => removeProduct(idx)}
               type="button"
               disabled={products.length === 1}
@@ -188,7 +188,7 @@ const Product = forwardRef((props, ref) => {
         </div>
       ))}
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-1 rounded mb-4"
+        className="border border-gray-300 text-gray-700 px-4 py-1 rounded mb-4 hover:bg-gray-100"
         onClick={addProduct}
         type="button"
       >
@@ -204,7 +204,7 @@ const Product = forwardRef((props, ref) => {
             <span>Discount (%):</span>
             <input
               type="number"
-              className="border rounded px-2 py-1 w-20 text-sm"
+              className="border border-gray-200 rounded px-2 py-1 w-20 text-sm"
               value={totals.discountPercent}
               onChange={e => handleTotalsChange('discountPercent', e.target.value)}
             />
@@ -213,7 +213,7 @@ const Product = forwardRef((props, ref) => {
             <span>Discount Amount:</span>
             <span>₹{totals.discountAmount.toFixed(2)}</span>
           </div>
-          <div className="flex justify-between mb-2 font-semibold">
+          <div className="flex justify-between mb-2 font-medium">
             <span>Payable Amount:</span>
             <span>₹{totals.payableAmount.toFixed(2)}</span>
           </div>
@@ -223,12 +223,12 @@ const Product = forwardRef((props, ref) => {
             <span>Paid Amount:</span>
             <input
               type="number"
-              className="border rounded px-2 py-1 w-24 text-sm"
+              className="border border-gray-200 rounded px-2 py-1 w-24 text-sm"
               value={totals.paidAmount}
               onChange={e => handleTotalsChange('paidAmount', e.target.value)}
             />
           </div>
-          <div className="flex justify-between mb-2 font-semibold">
+          <div className="flex justify-between mb-2 font-medium">
             <span>Due Amount:</span>
             <span>₹{totals.dueAmount.toFixed(2)}</span>
           </div>
