@@ -10,6 +10,7 @@ import Content from '../components/Content';
 import Product from '../components/Product';
 import Footer from '../components/Footer';
 import Preview from '../components/Preview';
+import LandingPg from '../components/LandingPg';
 
 function MainApp() {
   const [customer, setCustomer] = useState({
@@ -117,7 +118,8 @@ const handleSendEmail = async () => {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainApp />} />
+      <Route path="/" element={<LandingPg />} />
+      <Route path="/app" element={<MainApp />} />
       <Route path="/preview" element={<Preview />} />
     </Routes>
   );
